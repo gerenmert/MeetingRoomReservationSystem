@@ -39,7 +39,63 @@ public class Meeting {
 	public Meeting() {
 		
 	}
-
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public String getBookingOwnerName() {
+		return bookingOwnerName;
+	}
+	
+	public void setBookingOwnerName(String bookingOwnerName) {
+		this.bookingOwnerName = bookingOwnerName;
+	}
+	
+	public String getBookingOwnerSurname() {
+		return bookingOwnerSurname;
+	}
+	
+	public void setBookingOwnerSurname(String bookingOwnerSurname) {
+		this.bookingOwnerSurname = bookingOwnerSurname;
+	}
+	
+	public String getMeetingRoomNo() {
+		return meetingRoomNo;
+	}
+	
+	public void setMeetingRoomNo(String meetingRoomNo) {
+		this.meetingRoomNo = meetingRoomNo;
+	}
+	
+	public Date getBookingDate() {
+		return bookingDate;
+	}
+	
+	public void setBookingDate(Date bookingDate) {
+		this.bookingDate = bookingDate;
+	}
+	
+	public String getStartTime() {
+		return startTime;
+	}
+	
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+	
+	public String getFinishTime() {
+		return finishTime;
+	}
+	
+	public void setFinishTime(String finishTime) {
+		this.finishTime = finishTime;
+	}
+	
 	@Override
 	public String toString() {
 		return "Meeting [id=" + id + ", bookingOwnerName=" + bookingOwnerName + ", bookingOwnerSurname="
