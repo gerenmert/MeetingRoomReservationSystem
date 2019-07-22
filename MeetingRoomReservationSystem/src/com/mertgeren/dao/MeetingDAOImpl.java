@@ -19,7 +19,7 @@ public class MeetingDAOImpl implements MeetingDAO {
 	private SessionFactory sessionFactory;						//spring-mvc-crud-demo-servlet.xml dosyasındaki Step 2
 	
 	@Override
-	@Transactional
+	//@Transactional
 	public List<Meeting> getMeetings() {
 		
 		// get the current hibernate session

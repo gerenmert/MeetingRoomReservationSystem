@@ -10,20 +10,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mertgeren.dao.MeetingDAO;
 import com.mertgeren.entity.Meeting;
+import com.mertgeren.service.MeetingService;
 
 @Controller
 @RequestMapping("/meeting")
 public class MeetingController {
 	
 	// need to inject the meeting dao
+	//@Autowired
+	//private MeetingDAO meetingDAO;
+	
+	// need to inject our customer service
 	@Autowired
-	private MeetingDAO meetingDAO;
+	private MeetingService meetingService;
 
 	@GetMapping("/list")
 	public String listMeetings(Model theModel) {
 		
-		// get meetings from the dao
-		List<Meeting> theMeetings = meetingDAO.getMeetings();
+		// get meetings from the service
+		List<Meeting> theMeetings = meetingService.getMeetings();
 		
 		// add the meetings to the model
 		theModel.addAttribute("meetings", theMeetings);					// name - value
