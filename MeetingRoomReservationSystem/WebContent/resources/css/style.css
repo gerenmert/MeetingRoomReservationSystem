@@ -8,7 +8,7 @@ table {
 	border-collapse:collapse;
 	border-bottom:1px solid gray;
 	font-family: Tahoma,Verdana,Segoe,sans-serif;
-	width:72%;
+	width:100%;
 }
  
 th {
@@ -27,7 +27,7 @@ tr:nth-child(even) {background: #FFFFFF}
 tr:nth-child(odd) {background: #e2e2e2}	
  
 #wrapper {width: 100%; margin-top: 0px; }
-#header {width: 70%; background:  #30d5c8; margin-top: 0px; padding:15px 0px 15px 15px;}
+#header {width: 100%; background:  #30d5c8; margin-top: 0px; padding:15px 0px 15px 0px;}
 #header h2 {width: 100%; margin:auto; color: #FFFFFF;}
 #container {width: 100%; margin:auto}
 #container h3 {color: #000;}
