@@ -29,12 +29,12 @@
 				</tr>
 				<c:forEach var="tempMeeting" items="${meetings}">								<!-- Controller sınıfındaki theModel.addAttribute("meetings", theMeetings); parametresi ile aynı olmalı -->
 					<tr>
-						<th> ${tempMeeting.bookingOwnerName} </th>
-						<th> ${tempMeeting.bookingOwnerSurname} </th>
-						<th> ${tempMeeting.meetingRoomNo} </th>
-						<th> ${tempMeeting.bookingDate} </th>
-						<th> ${tempMeeting.startTime} </th>
-						<th> ${tempMeeting.finishTime} </th>
+						<td> ${tempMeeting.bookingOwnerName} </td>
+						<td> ${tempMeeting.bookingOwnerSurname} </td>
+						<td> ${tempMeeting.meetingRoomNo} </td>
+						<td> ${tempMeeting.bookingDate} </td>
+						<td> ${tempMeeting.startTime} </td>
+						<td> ${tempMeeting.finishTime} </td>
 					</tr>
 				</c:forEach>
 			</table>
