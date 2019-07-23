@@ -30,7 +30,7 @@ public class Meeting {
 	
 	@Column(name = "startTime")
 	private String startTime;
-	
+
 	@Column(name = "finishTime")
 	private String finishTime;
 	
@@ -93,7 +93,7 @@ public class Meeting {
 	public void setFinishTime(String finishTime) {
 		this.finishTime = finishTime;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Meeting [id=" + id + ", bookingOwnerName=" + bookingOwnerName + ", bookingOwnerSurname="

@@ -22,7 +22,7 @@
 		<div id="content">
 			<input type="button" value="Add Meeting" onclick="window.location.href='showFormForAdd'; return false;" class="add-button"/>
 			<form:form action="search" method="GET">
-                Search Meeting Room No: <input type="text" name="theSearchRoomNo" />
+                Search Meeting: <input type="text" name="theSearchRoomNo" />
                 
                 <input type="submit" value="Search" class="add-button" />
             </form:form>
