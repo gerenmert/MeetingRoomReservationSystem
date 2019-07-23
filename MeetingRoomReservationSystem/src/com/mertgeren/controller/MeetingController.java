@@ -79,4 +79,16 @@ public class MeetingController {
 		
 		return "redirect:/meeting/list";
 	}
+	
+	@GetMapping("/search")
+    public String searchMeetings(@RequestParam("theSearchRoomNo") String theSearchRoomNo, Model theModel) {
+
+        // search meetings from the service
+        List<Meeting> theMeetings = meetingService.searchMeetings(theSearchRoomNo);
+                
+        // add the customers to the model
+        theModel.addAttribute("meetings", theMeetings);
+
+        return "list-meetings";        
+    }
 }

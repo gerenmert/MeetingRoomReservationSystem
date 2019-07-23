@@ -13,4 +13,6 @@ public interface MeetingService {
 	public Meeting getMeeting(int theId);
 
 	public void deleteMeeting(int theId);
+
+	public List<Meeting> searchMeetings(String theSearchRoomNo);
 }

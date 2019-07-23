@@ -68,4 +68,32 @@ public class MeetingDAOImpl implements MeetingDAO {
 		theQuery.executeUpdate();
 	}
 
+	@Override
+	public List<Meeting> searchMeetings(String theSearchRoomNo) {
+		
+		// get the current hibernate session
+        Session currentSession = sessionFactory.getCurrentSession();
+        
+        Query theQuery = null;
+        
+        // only search by room no if theSearchRoomNo is not empty
+        if (theSearchRoomNo != null && theSearchRoomNo.trim().length() > 0) {
+
+            // search for theSearchRoomNo
+            theQuery = currentSession.createQuery("from Meeting where lower(meetingRoomNo) like :theNo", Meeting.class);
+            theQuery.setParameter("theNo", theSearchRoomNo);
+
+        }
+        else {
+            // theSearchRoomNo is empty ... so just get all meetings
+            theQuery = currentSession.createQuery("from Meeting", Meeting.class);            
+        }
+        
+        // execute query and get result list
+        List<Meeting> meetings = theQuery.getResultList();
+                
+        // return the results        
+        return meetings;
+	}
+
 }
