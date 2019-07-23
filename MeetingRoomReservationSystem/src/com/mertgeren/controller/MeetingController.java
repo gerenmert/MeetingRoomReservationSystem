@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mertgeren.dao.MeetingDAO;
 import com.mertgeren.entity.Meeting;
@@ -44,6 +46,28 @@ public class MeetingController {
 		
 		theModel.addAttribute("meeting", theMeeting);
 		
+		return "meeting-form";
+	}
+	
+	@RequestMapping("/saveCustomer")
+	public String saveMeeting(@ModelAttribute("meeting") Meeting theMeeting) {
+		
+		// save the customer using our service
+		meetingService.saveMeeting(theMeeting);
+		
+		return "redirect:/meeting/list";
+	}
+	
+	@GetMapping("/showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("meetingId") int theId, Model theModel) {
+		
+		// get the meeting from the database
+		Meeting theMeeting = meetingService.getMeeting(theId);
+		
+		// set meeting as a model attribute to pre-populate the form
+		theModel.addAttribute("meeting", theMeeting);													//meeting-form sayfasındaki formumuzun modelAttribute değeri ile aynı olmak zorunda
+		
+		// send over to our form
 		return "meeting-form";
 	}
 }

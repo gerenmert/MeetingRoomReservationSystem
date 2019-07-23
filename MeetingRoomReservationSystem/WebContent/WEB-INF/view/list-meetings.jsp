@@ -6,6 +6,7 @@
 
 <head>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
 <body>
@@ -27,8 +28,14 @@
 					<th>Booking Date</th>
 					<th>Start Time</th>
 					<th>Finish Time</th>
+					<th>Action</th>
 				</tr>
-				<c:forEach var="tempMeeting" items="${meetings}">								<!-- Controller sınıfındaki theModel.addAttribute("meetings", theMeetings); parametresi ile aynı olmalı -->
+				<c:forEach var="tempMeeting" items="${meetings}">							<!-- Controller sınıfındaki theModel.addAttribute("meetings", theMeetings); parametresi ile aynı olmalı -->
+				
+					<c:url var="updateLink" value="/meeting/showFormForUpdate">
+						<c:param name="meetingId" value="${tempMeeting.id}"/>
+					</c:url>
+					
 					<tr>
 						<td> ${tempMeeting.bookingOwnerName} </td>
 						<td> ${tempMeeting.bookingOwnerSurname} </td>
@@ -36,6 +43,7 @@
 						<td> ${tempMeeting.bookingDate} </td>
 						<td> ${tempMeeting.startTime} </td>
 						<td> ${tempMeeting.finishTime} </td>
+						<td> <a href="${updateLink}"> <i class="fas fa-edit"></i> </a> </td>
 					</tr>
 				</c:forEach>
 			</table>

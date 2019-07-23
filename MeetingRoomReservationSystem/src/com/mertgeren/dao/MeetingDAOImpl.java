@@ -19,7 +19,6 @@ public class MeetingDAOImpl implements MeetingDAO {
 	private SessionFactory sessionFactory;						//spring-mvc-crud-demo-servlet.xml dosyasındaki Step 2
 	
 	@Override
-	//@Transactional
 	public List<Meeting> getMeetings() {
 		
 		// get the current hibernate session
@@ -33,6 +32,28 @@ public class MeetingDAOImpl implements MeetingDAO {
 		
 		// return the results
 		return meetings;
+	}
+
+	@Override
+	public void saveMeeting(Meeting theMeeting) {
+		
+		// get current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// save/update the meeting ... finally
+		currentSession.saveOrUpdate(theMeeting);
+	}
+
+	@Override
+	public Meeting getMeeting(int theId) {
+		
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// now retrieve/read from database using the primary key
+		Meeting theMeeting = currentSession.get(Meeting.class, theId);
+		
+		return theMeeting;
 	}
 
 }

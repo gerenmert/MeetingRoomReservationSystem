@@ -22,7 +22,7 @@ tr {
 	border-top:1px solid gray;
 	text-align:center;	
 }
- 
+
 tr:nth-child(even) {background: #FFFFFF}
 tr:nth-child(odd) {background: #e2e2e2}	
  

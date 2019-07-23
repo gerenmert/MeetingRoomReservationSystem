@@ -21,6 +21,7 @@
 	<div id="container">
 		<h3>Save Meeting</h3>
 		<form:form action="saveCustomer" modelAttribute="meeting" method="POST">
+			<form:hidden path="id"/>
 			<table>
 				<tbody>
 					<tr>

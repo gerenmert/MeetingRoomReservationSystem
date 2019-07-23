@@ -1,7 +1,5 @@
 package com.mertgeren.entity;
 
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,7 +26,7 @@ public class Meeting {
 	private String meetingRoomNo;
 	
 	@Column(name = "bookingDate")
-	private Date bookingDate;
+	private String bookingDate;
 	
 	@Column(name = "startTime")
 	private String startTime;
@@ -72,11 +70,11 @@ public class Meeting {
 		this.meetingRoomNo = meetingRoomNo;
 	}
 	
-	public Date getBookingDate() {
+	public String getBookingDate() {
 		return bookingDate;
 	}
 	
-	public void setBookingDate(Date bookingDate) {
+	public void setBookingDate(String bookingDate) {
 		this.bookingDate = bookingDate;
 	}
 	

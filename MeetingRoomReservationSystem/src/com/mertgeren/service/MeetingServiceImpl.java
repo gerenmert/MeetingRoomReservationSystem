@@ -22,4 +22,18 @@ public class MeetingServiceImpl implements MeetingService {
 		return meetingDAO.getMeetings();
 	}
 
+	@Override
+	@Transactional
+	public void saveMeeting(Meeting theMeeting) {
+		
+		meetingDAO.saveMeeting(theMeeting);
+	}
+
+	@Override
+	@Transactional
+	public Meeting getMeeting(int theId) {
+		
+		return meetingDAO.getMeeting(theId);
+	}
+
 }

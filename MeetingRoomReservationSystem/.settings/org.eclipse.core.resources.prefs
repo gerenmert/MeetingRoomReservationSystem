@@ -1,3 +1,4 @@
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/view/list-meetings.jsp=UTF-8
+encoding//src/com/mertgeren/controller/MeetingController.java=UTF-8
 encoding//src/com/mertgeren/dao/MeetingDAOImpl.java=UTF-8
