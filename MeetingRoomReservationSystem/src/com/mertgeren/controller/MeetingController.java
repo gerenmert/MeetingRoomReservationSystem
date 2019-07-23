@@ -20,7 +20,7 @@ public class MeetingController {
 	//@Autowired
 	//private MeetingDAO meetingDAO;
 	
-	// need to inject our customer service
+	// need to inject our meeting service
 	@Autowired
 	private MeetingService meetingService;
 
@@ -34,5 +34,16 @@ public class MeetingController {
 		theModel.addAttribute("meetings", theMeetings);					// name - value
 		
 		return "list-meetings";
+	}
+	
+	@GetMapping("/showFormForAdd")
+	public String showFormForAdd(Model theModel) {
+		
+		// create model attribute to bind form data
+		Meeting theMeeting = new Meeting();
+		
+		theModel.addAttribute("meeting", theMeeting);
+		
+		return "meeting-form";
 	}
 }

@@ -20,6 +20,14 @@ input {
 	font-size: 16px;
 }
 
+.select {
+	width: 260px;
+	border: 1px solid #666; 
+	border-radius: 5px; 
+	padding: 4px; 
+	font-size: 16px;
+}
+
 .save {
 	font-weight: bold;
 	width: 130px; 

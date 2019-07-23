@@ -18,6 +18,7 @@
 
 	<div id="container">
 		<div id="content">
+			<input type="button" value="Add Meeting" onclick="window.location.href='showFormForAdd'; return false;" class="add-button"/>
 			<table>
 				<tr>
 					<th>Name of Booking Owner</th>

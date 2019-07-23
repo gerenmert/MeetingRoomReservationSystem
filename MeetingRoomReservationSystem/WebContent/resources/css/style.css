@@ -39,9 +39,9 @@ tr:nth-child(odd) {background: #e2e2e2}
 	padding: 4px; 
 	font-size: 12px;
 	font-weight: bold;
-	width: 120px; 
-	padding: 5px 10px; 
+	width: 240px; 
+	padding: 8px 8px; 
 	
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 	background: #cccccc;
 }
