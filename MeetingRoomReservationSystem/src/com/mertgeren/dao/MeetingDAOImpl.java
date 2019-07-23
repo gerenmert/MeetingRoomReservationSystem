@@ -56,4 +56,16 @@ public class MeetingDAOImpl implements MeetingDAO {
 		return theMeeting;
 	}
 
+	@Override
+	public void deleteMeeting(int theId) {
+		
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+				
+		// delete object with primary key
+		Query theQuery = currentSession.createQuery("delete from Meeting where id=:meetingId");
+		theQuery.setParameter("meetingId", theId);
+		theQuery.executeUpdate();
+	}
+
 }

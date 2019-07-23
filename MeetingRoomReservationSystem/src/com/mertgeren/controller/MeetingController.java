@@ -70,4 +70,13 @@ public class MeetingController {
 		// send over to our form
 		return "meeting-form";
 	}
+	
+	@GetMapping("/delete")
+	public String deleteMeeting(@RequestParam("meetingId") int theId) {
+		
+		// delete the meeting
+		meetingService.deleteMeeting(theId);
+		
+		return "redirect:/meeting/list";
+	}
 }

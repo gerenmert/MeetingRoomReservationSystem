@@ -36,6 +36,10 @@
 						<c:param name="meetingId" value="${tempMeeting.id}"/>
 					</c:url>
 					
+					<c:url var="deleteLink" value="/meeting/delete">
+						<c:param name="meetingId" value="${tempMeeting.id}"/>
+					</c:url>
+					
 					<tr>
 						<td> ${tempMeeting.bookingOwnerName} </td>
 						<td> ${tempMeeting.bookingOwnerSurname} </td>
@@ -43,7 +47,7 @@
 						<td> ${tempMeeting.bookingDate} </td>
 						<td> ${tempMeeting.startTime} </td>
 						<td> ${tempMeeting.finishTime} </td>
-						<td> <a href="${updateLink}"> <i class="fas fa-edit"></i> </a> </td>
+						<td> <a href="${updateLink}"> <i class="fas fa-edit"></i> | <a href="${deleteLink}" onclick="if(!(confirm('Are you sure you want to delete this customer'))) return false"> <i class="fas fa-trash-alt"></i> </a> </td>
 					</tr>
 				</c:forEach>
 			</table>

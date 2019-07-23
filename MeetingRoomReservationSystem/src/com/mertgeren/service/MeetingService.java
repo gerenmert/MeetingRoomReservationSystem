@@ -11,4 +11,6 @@ public interface MeetingService {
 	public void saveMeeting(Meeting theMeeting);
 	
 	public Meeting getMeeting(int theId);
+
+	public void deleteMeeting(int theId);
 }
