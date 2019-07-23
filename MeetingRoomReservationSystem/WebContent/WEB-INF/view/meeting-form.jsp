@@ -8,6 +8,9 @@
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css"/>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/add-meeting-style.css"/>
 	
+	<style>
+		.error {color:red}
+	</style>
 </head>
 
 <body>
@@ -27,6 +30,7 @@
 					<tr>
 						<td>Name of Booking Owner:</td>
 						<td><form:input path="bookingOwnerName"/></td>
+						<td><form:errors path="bookingOwnerName" cssClass="error"/></td>
 					</tr>
 					<tr>
 						<td>Surname of Booking Owner:</td>

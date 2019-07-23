@@ -7,6 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+
+
 @Entity							//persistence import
 @Table(name = "meetings")		//persistence import
 public class Meeting {
@@ -16,6 +21,8 @@ public class Meeting {
 	@Column(name = "id")
 	private int id;
 	
+	@NotNull(message = "is required")
+	//@Size(min = 1, message = "is required")
 	@Column(name = "bookingOwnerName")
 	private String bookingOwnerName;
 	

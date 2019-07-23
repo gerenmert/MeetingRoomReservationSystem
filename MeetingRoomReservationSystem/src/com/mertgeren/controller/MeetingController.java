@@ -2,10 +2,16 @@ package com.mertgeren.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +23,14 @@ import com.mertgeren.service.MeetingService;
 @Controller
 @RequestMapping("/meeting")
 public class MeetingController {
+	
+	@InitBinder
+	public void initBinder(WebDataBinder dataBinder) {
+		
+		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
+	}
+	
 	
 	// need to inject the meeting dao
 	//@Autowired
@@ -50,12 +64,16 @@ public class MeetingController {
 	}
 	
 	@RequestMapping("/saveCustomer")
-	public String saveMeeting(@ModelAttribute("meeting") Meeting theMeeting) {
+	public String saveMeeting(@Valid @ModelAttribute("meeting") Meeting theMeeting, BindingResult theBindingResult) {
 		
-		// save the customer using our service
-		meetingService.saveMeeting(theMeeting);
-		
-		return "redirect:/meeting/list";
+		// save the customer using our service 
+		if(theBindingResult.hasErrors()) {
+			return "redirect:/meeting/showFormForAdd";
+		}
+		else {
+			meetingService.saveMeeting(theMeeting);
+			return "redirect:/meeting/list";
+		}
 	}
 	
 	@GetMapping("/showFormForUpdate")
